@@ -7,8 +7,9 @@ RSpec.describe Calculator do
     let(:calculator) { Calculator.new }
 
     describe '#add' do
-      it 'returns the sum of two numbers' do
-        expect(calculator.add(2, 3)).to eq(5)
+
+      it "returns 0 for an empty string" do
+        expect(calculator.add("")).to eq(0)
       end
     end
 end
