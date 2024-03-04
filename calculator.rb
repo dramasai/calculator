@@ -7,6 +7,15 @@ class Calculator
         # Taking comma(,) as default delimiter.
         delimiter = ','
 
+        # handles when input string starts with //
+        if input_str.start_with?("//")
+            input_str = input_str.gsub("//", "")
+            delimiter = input_str[0] 
+        end
+      
+        # Replacing \n with delimiter
+        input_str = input_str.gsub("\n", delimiter)
+
         # returns the array of integers
         num_array = input_str.split(delimiter).map(&:to_i)
 
